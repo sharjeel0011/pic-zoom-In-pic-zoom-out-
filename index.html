@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            cursor: zoom-in;
+        }
+
+        .container {
+            width: 500px;
+            height: 300px;
+            box-shadow: 5px 5px 5px 5px rgb(192, 163, 163);
+            margin: auto;
+            display: none;
+        }
+
+        #im {
+            width: 700px;
+            height: 500px;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="img1" src="images/1.jpg" alt="" onmouseover="zoomin('images/1.jpg')" onmouseout="zoomout()">
+    <img id="img2" src="images/2.jpg" alt="" onmouseover="zoomin('images/2.jpg')" onmouseout="zoomout()">
+    <img id="img3" src="images/3.jpg" alt="" onmouseover="zoomin('images/3.jpg')" onmouseout="zoomout()">
+    <div class="container" id="j">
+
+        <img id="im" src="" alt="">
+    </div>
+    <script>
+        function zoomin(imageSrc) {
+            let im = document.getElementById("im");
+            im.src = imageSrc;
+            let container = document.getElementById("j").style.display = "block";
+            document.querySelector("body").style.backgroundColor = "rgb(229, 229, 227)"
+            const imgs = document.querySelectorAll("img")
+            for (i = 0; i < imgs.length ; i++) {
+                imgs[i]
+imgs.style.opacity="0.5%"
+            }
+        }
+        function zoomout() {
+
+            let container = document.getElementById("j").style.display = "none";
+            document.querySelector("body").style.backgroundColor = "#fff"
+        }
+    </script>
+</body>
+
+</html>
